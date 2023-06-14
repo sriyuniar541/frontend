@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import foto_lappan from '../../aset/lappan.jpg'
 
+
 function NavbarHome() {
   return (
     <Navbar bg="light" expand="lg" fixed="top" >
@@ -21,8 +22,8 @@ function NavbarHome() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav " className='justify-content-end'>
           <Nav>
-            <Nav.Link href="#home me-5" className='me-lg-5'>Home</Nav.Link>
-            <NavDropdown title="About" id="basic-nav-dropdown">
+            <Nav.Link href="#home me-5" className='me-lg-5' >HOME</Nav.Link>
+            <NavDropdown title="ABOUT" id="basic-nav-dropdown" >
               <NavDropdown.Item href="#action/3.1">Sejarah</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Pendiri</NavDropdown.Item>
             </NavDropdown>

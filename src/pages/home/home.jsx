@@ -1,6 +1,7 @@
 import React from "react";
 // import NavbarLandingPage from "../../component/navbar/navbar";
 import gambar1 from "../../aset/lappan.jpg";
+import gambar2 from "../../aset/gambar (1).jpg";
 // import skripsi from "../../aset/skripsi.jpg";
 import "./home.css";
 import Footer from '../../components/Footer/footer'
@@ -14,7 +15,7 @@ const Home = () => {
         <div className="row">
           <div className="col-lg-8 main_content">
             <img
-              src={gambar1}
+              src={gambar2}
               alt="bacground"
               className="bg_landing img-fluid"
             />
@@ -32,7 +33,8 @@ const Home = () => {
               Tips dan Trik bagi Mahasiswa Akhir dalam Menyelesaikan Skripsi dan
               Proses Pengolahan Data  
             </h2>
-            <p className="text-secondary author">Author : Beatric Tayanan</p>
+            <p className="text-secondary author mt-4">Jumat, 12 Agustus 2023</p>
+            <p className="text-secondary author mb-4 ">Author : Beatric Tayanan</p>
             <div className="content">
               <p>
                 Mahasiswa akhir adalah fase terakhir dalam menempuh pendidikan
@@ -98,6 +100,8 @@ const Home = () => {
                 dan trik yang telah disebutkan di atas, diharapkan mahasiswa
                 akhir bisa menyelesaikan skripsi dan proses pengolahan data.
               </p>
+              {/* <p className="text-secondary author mt-4">Jumat, 12 Agustus 2023</p>
+            <p className="text-secondary author mb-4">Author : Beatric Tayanan</p> */}
             </div>
           </div>
           <div className="col-lg-4 mt-lg-0 mt-4">
@@ -105,7 +109,25 @@ const Home = () => {
             {/* {dataById.map((artikelById) => ( */}
             {/* <Link to={`/PentingnyaNutrisiuntukKesehatan`} className="link"> */}
               <div className="card_news text-start">
-                <img src={gambar1} alt="list-news" className="news" />
+                <img src={gambar2} alt="list-news" className="news" />
+                <div className="title_List_news">
+                  <p>Pentingnya Nutrisi untuk Kesehatan</p>
+                  <p className="date">Baca Selengkapnya...</p>
+                </div>
+              </div>
+            {/* </Link> */}
+            {/* <Link to={`/PentingnyaNutrisiuntukKesehatan`} className="link"> */}
+              <div className="card_news text-start">
+                <img src={gambar2} alt="list-news" className="news" />
+                <div className="title_List_news">
+                  <p>Pentingnya Nutrisi untuk Kesehatan</p>
+                  <p className="date">Baca Selengkapnya...</p>
+                </div>
+              </div>
+            {/* </Link> */}
+            {/* <Link to={`/PentingnyaNutrisiuntukKesehatan`} className="link"> */}
+              <div className="card_news text-start">
+                <img src={gambar2} alt="list-news" className="news" />
                 <div className="title_List_news">
                   <p>Pentingnya Nutrisi untuk Kesehatan</p>
                   <p className="date">Baca Selengkapnya...</p>
