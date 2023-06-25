@@ -1,51 +1,56 @@
 import React from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 
-export default function Dropdown_start({
-  filterBintang_5,
-  filterBintang_4,
-  starts,
-  sertStarts,
-}) {
+export default function Dropdown_start({ starts, sertStarts }) {
   return (
     <div>
-      <select className="btn bg-white dropdown-toggle">
-        <option
+      <DropdownButton
+        id="dropdown-item-button"
+        title={starts ? starts : "Bintang Hotel"}
+        variant="light"
+      >
+        <Dropdown.Item
+          as="button"
           className="start_filter"
           value={starts}
-          style={{ height: "auto" }}
-          onChange={(e) => sertStarts(filterBintang_5)}
+          onClick={() => sertStarts("OneStar")}
         >
           Bintang Satu
-        </option>
-        <option
+        </Dropdown.Item>
+        <Dropdown.Item
+          as="button"
           className="start_filter"
           value={starts}
-          onChange={(e) => sertStarts(filterBintang_4)}
+          onClick={() => sertStarts("TwoStar")}
         >
           Bintang Dua
-        </option>
-        <option
+        </Dropdown.Item>
+        <Dropdown.Item
+          as="button"
           className="start_filter"
           value={starts}
-          onChange={(e) => sertStarts(filterBintang_4)}
+          onClick={() => sertStarts("ThreeStar")}
         >
           Bintang Tiga
-        </option>
-        <option
+        </Dropdown.Item>
+        <Dropdown.Item
+          as="button"
           className="start_filter"
           value={starts}
-          onChange={(e) => sertStarts(filterBintang_4)}
+          onClick={() => sertStarts("FourStar")}
         >
           Bintang Empat
-        </option>
-        <option
+        </Dropdown.Item>
+        <Dropdown.Item
+          as="button"
           className="start_filter"
           value={starts}
-          onChange={(e) => sertStarts(filterBintang_4)}
+          onClick={() => sertStarts("none")}
         >
-          Bintang Lima
-        </option>
-      </select>
+          Hotel Biasa
+        </Dropdown.Item>
+      </DropdownButton>
     </div>
   );
 }

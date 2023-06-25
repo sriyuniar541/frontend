@@ -10,17 +10,15 @@
   margin-bottom: 10px;
   box-sizing: border-box;
   box-shadow: 1px 1px 5px rgb(189, 184, 184);
-  /* display: flex; */
   align-items: center;
 }
 
 .image {
   height: 300px;
-  /* width: 100%; */
   display: flex;
   align-items: center;
   background-color: white;
-   overflow: hidden;
+  overflow: hidden;
 }
 
 .image img {
@@ -39,7 +37,11 @@
   color: white;
   padding: 5px;
   border-radius: 5px;
-  
+}
+
+.rating_info p {
+  font-size: 12px;
+  margin-right: 12px;
 }
 
 .start {
@@ -69,7 +71,7 @@
 }
 
 .price {
-  color :brown
+  color: brown;
 }
 
 .paginations {

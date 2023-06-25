@@ -1,8 +1,9 @@
 import "./App.css";
 import data from "../src/data/Response.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Drpdown_lokasi from "./components/drpdown_lokasi";
 import Dropdown_start from "./components/dropdown_start";
+import Dropdown_price from "./components/dropdown_price";
 
 function App() {
   const getData =
@@ -12,9 +13,14 @@ function App() {
 
   const [search, setSearch] = useState("");
   const [lokasi, setLokasi] = useState("");
-  const [starts, sertStarts] = useState("Bintang Hotel");
+  const [starts, sertStarts] = useState("OneStar");
+  const [price, setPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const recordPerPage = 2;
+
+  useEffect(() => {}, [starts]);
+
+  console.log(starts);
 
   //searching
   const filterCategory = getData.filter((hotel) => {
@@ -30,31 +36,28 @@ function App() {
     );
   });
 
-  const filterBintang_5 = filterLoaksi.filter((hotel) =>
-        hotel.HotelInfo.Rating  === 'FiveStar'
-    )
-  const filterBintang_4 = filterBintang_5.filter((hotel) =>
-        hotel.HotelInfo.Rating  === 'FourStar'
-    )
+  // filter bintang
+  const filterBintang_5 = filterLoaksi.filter(
+    (hotel) => hotel.HotelInfo.Rating === starts
+  );
+
+  console.log(starts);
 
   const lastIndex = currentPage * recordPerPage;
   const forstIndex = lastIndex - recordPerPage;
-  const record = filterLoaksi.slice(forstIndex, lastIndex);
+  const record = filterBintang_5.slice(forstIndex, lastIndex);
 
   return (
     <div className="App">
       <div className="container my-5">
         <div className="d-flex">
-           {/* filter  lokasi*/}
-        <Drpdown_lokasi lokasi={lokasi} setLokasi={setLokasi} />
+          {/* filter  lokasi*/}
+          <Drpdown_lokasi lokasi={lokasi} setLokasi={setLokasi} />
 
-        {/* filter start */}
-        <Dropdown_start filterBintang_1={filterBintang_5} filterBintang_4={filterBintang_4} starts={starts} sertStarts={sertStarts} />
-
-        
-       
+          {/* filter start */}
+          <Dropdown_start starts={starts} sertStarts={sertStarts} />
         </div>
-        
+
         {/* search */}
         <input
           type="text"
@@ -65,6 +68,13 @@ function App() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <div className="d-flex justify-content-between mx-2">
+          <p>
+            Menampilkan lebih dari {getData.length} akomodasi terbaik dengan
+            harga terbaik
+          </p>
+          <Dropdown_price price={price} setPrice={setPrice} tPrice={price} />
+        </div>
 
         <div className="mb-3 p-2 ">
           {record.map((p) => (
@@ -97,11 +107,26 @@ function App() {
                   </div>
                   <p className="address bg-white">{p.HotelInfo.HotelAddress}</p>
                 </div>
-                <p className="rating col-1">
-                  {p.HotelInfo.TripAdvisorRating
-                    ? p.HotelInfo.TripAdvisorRating
-                    : 0.0}
-                </p>
+                <div className="d-flex bg-white rating_info">
+                  <p className="rating col-1">
+                    {p.HotelInfo.TripAdvisorRating
+                      ? p.HotelInfo.TripAdvisorRating
+                      : 0.0}
+                  </p>
+                  {p.HotelInfo.TripAdvisorRating > 3.0 ? (
+                    <p className="pr-3 bg-white  text-primary">
+                      <b className="bg-white">Good</b>{" "}
+                    </p>
+                  ) : p.HotelInfo.TripAdvisorRating > 2.0 ? (
+                    <p className="text-warning bg-white">
+                      <b className="bg-white">cukup</b>
+                    </p>
+                  ) : (
+                    <p className="text-danger bg-white">
+                      <b className="bg-white">Kurang/Belum ada rating</b>
+                    </p>
+                  )}
+                </div>
               </div>
 
               <div className="bg-white ">
@@ -118,16 +143,8 @@ function App() {
           ))}
         </div>
       </div>
+
       {/* pagination */}
-      {/* <a href="#" onClick={prePage}>
-        prev
-      </a>
-
-      <a href="#">{currentPage}</a>
-
-      <a href="#" onClick={nextPage}>
-        next
-      </a> */}
       <div className="paginations">
         <nav aria-label="Page navigation example">
           <ul className="pagination">
