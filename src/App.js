@@ -108,11 +108,23 @@ function App() {
                   <p className="address bg-white">{p.HotelInfo.HotelAddress}</p>
                 </div>
                 <div className="d-flex bg-white rating_info">
-                  <p className="rating col-1">
-                    {p.HotelInfo.TripAdvisorRating
-                      ? p.HotelInfo.TripAdvisorRating
-                      : 0.0}
-                  </p>
+                  <div className="rating col-1 text-white">
+                    {p.HotelInfo.TripAdvisorRating > 3.0 ? (
+                      <p className="bg-primary text-white">
+                        {p.HotelInfo.TripAdvisorRating}
+                      </p>
+                    ) : p.HotelInfo.TripAdvisorRating > 2.0 ? (
+                      <p className="bg-warning">
+                        {p.HotelInfo.TripAdvisorRating}
+                      </p>
+                    ) : p.HotelInfo.TripAdvisorRating == "" ? (
+                      <p className="bg-danger">
+                        {p.HotelInfo.TripAdvisorRating}
+                      </p>
+                    ) : (
+                      <p className="bg-danger">0.0</p>
+                    )}
+                  </div>
                   {p.HotelInfo.TripAdvisorRating > 3.0 ? (
                     <p className="pr-3 bg-white  text-primary">
                       <b className="bg-white">Good</b>{" "}
