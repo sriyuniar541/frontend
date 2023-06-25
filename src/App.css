@@ -1,7 +1,79 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(218, 212, 212);
 }
 
-.active {
-  background-color: aqua;
+.cart_hotel {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 5px rgb(189, 184, 184);
+  /* display: flex; */
+  align-items: center;
+}
+
+.image {
+  height: 300px;
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  background-color: white;
+   overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
+
+.address {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  background-color: blue;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  
+}
+
+.start {
+  color: gold;
+  font-size: 50px;
+  margin-right: 20px;
+}
+
+.detail_hotel {
+  box-sizing: border-box;
+  padding: 10px 0 10px 0;
+  margin-left: 20px;
+  background-color: white;
+}
+
+.detail_hotel h2 {
+  font-size: 24px;
+  font-size: bold;
+}
+
+.price_title {
+  padding: 10px;
+  color: white;
+  background-color: brown;
+  border-radius: 5px;
+  /* height: 20px; */
+}
+
+.price {
+  color :brown
+}
+
+.paginations {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
