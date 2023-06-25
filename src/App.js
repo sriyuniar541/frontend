@@ -108,7 +108,7 @@ function App() {
                   <p className="address bg-white">{p.HotelInfo.HotelAddress}</p>
                 </div>
                 <div className="d-flex bg-white rating_info">
-                  <div className="rating col-1 text-white">
+                  <div className="rating col-lg-1 text-white">
                     {p.HotelInfo.TripAdvisorRating > 3.0 ? (
                       <p className="bg-primary text-white">
                         {p.HotelInfo.TripAdvisorRating}
