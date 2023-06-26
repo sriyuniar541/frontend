@@ -73,12 +73,12 @@ function App() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="d-flex justify-content-between mx-2">
+        <div className="d-lg-flex justify-content-between mx-2">
           <p>
             Menampilkan lebih dari {getData.length} akomodasi terbaik dengan
             harga terbaik
           </p>
-          <Dropdown_price price={price} setPrice={setPrice} tPrice={price} />
+          {/* <Dropdown_price price={price} setPrice={setPrice} tPrice={price} /> */}
         </div>
 
         <div className="mb-3 p-2">
