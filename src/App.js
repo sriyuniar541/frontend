@@ -13,7 +13,7 @@ function App() {
 
   const [search, setSearch] = useState("");
   const [lokasi, setLokasi] = useState("");
-  const [starts, sertStarts] = useState("OneStar");
+  const [starts, sertStarts] = useState("OneStart");
   const [price, setPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const recordPerPage = 2;
@@ -105,7 +105,7 @@ function App() {
                       ? "*"
                       : "none"}
                   </div>
-                  <p className="address bg-white">{p.HotelInfo.HotelAddress}</p>
+                  <p className="address bg-white"><u className="bg-white">{p.HotelInfo.HotelAddress}</u></p>
                 </div>
                 <div className="d-flex bg-white rating_info">
                   <div className="rating col-lg-1 text-white">
@@ -114,7 +114,7 @@ function App() {
                         {p.HotelInfo.TripAdvisorRating}
                       </p>
                     ) : p.HotelInfo.TripAdvisorRating > 2.0 ? (
-                      <p className="bg-warning">
+                      <p className="bg-warning ">
                         {p.HotelInfo.TripAdvisorRating}
                       </p>
                     ) : p.HotelInfo.TripAdvisorRating == "" ? (
@@ -126,16 +126,22 @@ function App() {
                     )}
                   </div>
                   {p.HotelInfo.TripAdvisorRating > 3.0 ? (
-                    <p className="pr-3 bg-white  text-primary">
-                      <b className="bg-white">Good</b>{" "}
+                    <p className="pr-3 bg-white  text-primary bg-white px-3 border pt-1">
+                      {/* <b className="bg-white"> */}
+                        Good
+                        {/* </b>{" "} */}
                     </p>
                   ) : p.HotelInfo.TripAdvisorRating > 2.0 ? (
-                    <p className="text-warning bg-white">
-                      <b className="bg-white">cukup</b>
+                    <p className="text-warning bg-white px-3 border pt-1">
+                      {/* <b className="bg-white"> */}
+                        Cukup
+                        {/* </b> */}
                     </p>
                   ) : (
-                    <p className="text-danger bg-white">
-                      <b className="bg-white">Kurang/Belum ada rating</b>
+                    <p className="text-danger bg-white px-3 border pt-1">
+                      {/* <b className=" p-2 mt-2 border"> */}
+                        Kurang/Belum ada rating
+                        {/* </b> */}
                     </p>
                   )}
                 </div>

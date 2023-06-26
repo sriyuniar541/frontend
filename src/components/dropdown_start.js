@@ -1,6 +1,7 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import "../App.css";
 
 export default function Dropdown_start({ starts, sertStarts }) {
   return (
@@ -8,7 +9,8 @@ export default function Dropdown_start({ starts, sertStarts }) {
       <DropdownButton
         id="dropdown-item-button"
         title={starts ? starts : "Bintang Hotel"}
-        variant="light"
+        variant="white"
+        className="dropdown_button mx-2"
       >
         <Dropdown.Item
           as="button"
