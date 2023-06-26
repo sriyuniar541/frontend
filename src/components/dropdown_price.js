@@ -1,27 +1,35 @@
 import React from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import "../App.css";
+import { BsFillStarFill } from "react-icons/bs";
 
-export default function Dropdown_price({
-  price, setPrice
-}) {
+export default function Dropdown_start({ starts, sertStarts }) {
   return (
-    <div>
-      <select className="btn bg-white dropdown-toggle">
-        <option
+    <div className="text-secondary bg-white star">
+      <DropdownButton
+        id="dropdown-item-button"
+        title="Per kamar per malam"
+        variant="white text-secondary border-white"
+        className="dropdown_button mx-2"
+      >
+        <Dropdown.Item
+          as="button"
           className="start_filter"
-          value={price}
-          style={{ height: "auto" }}
-          onChange={(e) => setPrice(price)}
+          // value={starts}
+          // onClick={() => sertStarts("OneStar")}
         >
           Per kamar per malam
-        </option>
-        <option
+        </Dropdown.Item>
+        <Dropdown.Item
+          as="button"
           className="start_filter"
-          value={price}
-          onChange={(e) => setPrice(price * 2)}
+          // value={starts}
+          // onClick={() => sertStarts("OneStar")}
         >
-          Per kamar dua malam
-        </option>
-      </select>
+          Per kamar per 2 malam
+        </Dropdown.Item>
+      </DropdownButton>
     </div>
   );
 }

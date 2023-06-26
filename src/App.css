@@ -3,7 +3,7 @@
   background-color: rgb(218, 212, 212);
 }
 
-.dropdown_button, .location, .search {
+.dropdown_button, .location, .search, .star {
   border-radius: 5px;
   background-color: white;
 }

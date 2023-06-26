@@ -78,7 +78,10 @@ function App() {
             Menampilkan lebih dari {getData.length} akomodasi terbaik dengan
             harga terbaik
           </p>
-          {/* <Dropdown_price price={price} setPrice={setPrice} tPrice={price} /> */}
+          <div className="d-flex">
+            <p className="mt-1 me-2">Tampilan Harga : </p>
+            <Dropdown_price price={price} setPrice={setPrice} tPrice={price} />
+          </div>
         </div>
 
         <div className="mb-3 p-2">
