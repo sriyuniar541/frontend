@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Drpdown_lokasi from "./components/drpdown_lokasi";
 import Dropdown_start from "./components/dropdown_start";
 import Dropdown_price from "./components/dropdown_price";
+import { FiSearch } from "react-icons/fi";
+import { BsFillStarFill } from "react-icons/bs";
 
 function App() {
   const getData =
@@ -59,15 +61,18 @@ function App() {
         </div>
 
         {/* search */}
-        <input
-          type="text"
-          className="form-control my-3 col-2"
-          id="search"
-          placeholder="Search Hotel"
-          style={{ height: "auto" }}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <div className="d-flex bg-white my-2 search">
+          <FiSearch className="mt-2 ms-2 bg-white" />
+          <input
+            type="text"
+            className="form-control border-white"
+            id="search"
+            placeholder="Search Hotel"
+            style={{ height: "auto" }}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
         <div className="d-flex justify-content-between mx-2">
           <p>
             Menampilkan lebih dari {getData.length} akomodasi terbaik dengan
@@ -76,7 +81,7 @@ function App() {
           <Dropdown_price price={price} setPrice={setPrice} tPrice={price} />
         </div>
 
-        <div className="mb-3 p-2 ">
+        <div className="mb-3 p-2">
           {record.map((p) => (
             <div
               key={p.ResultIndex}
@@ -90,22 +95,44 @@ function App() {
               </div>
               <div className="detail_hotel col-6">
                 <h2 className="mt-2 bg-white"> {p.HotelInfo.HotelName}</h2>
-                <div className="d-flex  col-12 bg-white">
+                <div className="d-lg-flex  col-12 bg-white">
                   {/* bintang */}
-                  <div className="start bg-white">
-                    {p.HotelInfo.Rating === "FiveStar"
-                      ? p.HotelInfo.Rating === "*****"
-                      : p.HotelInfo.Rating === "FourStar"
-                      ? "****"
-                      : p.HotelInfo.Rating === "ThreeStar"
-                      ? "***"
-                      : p.HotelInfo.Rating === "TwoStar"
-                      ? "**"
-                      : p.HotelInfo.Rating === "OneStar"
-                      ? "*"
-                      : "none"}
+                  <div className="start bg-white col-lg-2">
+                    {p.HotelInfo.Rating === "FiveStar" ? (
+                      <div className="d-flex">
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                      </div>
+                    ) : p.HotelInfo.Rating === "FourStar" ? (
+                      <>
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                      </>
+                    ) : p.HotelInfo.Rating === "ThreeStar" ? (
+                      <>
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                      </>
+                    ) : p.HotelInfo.Rating === "TwoStar" ? (
+                      <>
+                        <BsFillStarFill className="bg-white" />
+                        <BsFillStarFill className="bg-white" />
+                      </>
+                    ) : p.HotelInfo.Rating === "OneStar" ? (
+                      <BsFillStarFill className="bg-white" />
+                    ) : (
+                      "none"
+                    )}
                   </div>
-                  <p className="address bg-white"><u className="bg-white">{p.HotelInfo.HotelAddress}</u></p>
+                  <p className="address bg-white">
+                    <u className="bg-white">{p.HotelInfo.HotelAddress}</u>
+                  </p>
                 </div>
                 <div className="d-flex bg-white rating_info">
                   <div className="rating col-lg-1 text-white">
@@ -128,20 +155,20 @@ function App() {
                   {p.HotelInfo.TripAdvisorRating > 3.0 ? (
                     <p className="pr-3 bg-white  text-primary bg-white px-3 border pt-1">
                       {/* <b className="bg-white"> */}
-                        Good
-                        {/* </b>{" "} */}
+                      Good
+                      {/* </b>{" "} */}
                     </p>
                   ) : p.HotelInfo.TripAdvisorRating > 2.0 ? (
                     <p className="text-warning bg-white px-3 border pt-1">
                       {/* <b className="bg-white"> */}
-                        Cukup
-                        {/* </b> */}
+                      Cukup
+                      {/* </b> */}
                     </p>
                   ) : (
                     <p className="text-danger bg-white px-3 border pt-1">
                       {/* <b className=" p-2 mt-2 border"> */}
-                        Kurang/Belum ada rating
-                        {/* </b> */}
+                      Kurang/Belum ada rating
+                      {/* </b> */}
                     </p>
                   )}
                 </div>
@@ -167,17 +194,25 @@ function App() {
         <nav aria-label="Page navigation example">
           <ul className="pagination">
             <li className="page-item">
-              <a className="page-link" href="#" onClick={prePage}>
+              <a
+                className="page-link text-secondary"
+                href="#"
+                onClick={prePage}
+              >
                 Previous
               </a>
             </li>
-            <li className="page-item">
-              <a className="page-link" href="#">
+            <li className="page-item ">
+              <a className="page-link text-secondary" href="#">
                 {currentPage}
               </a>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#" onClick={nextPage}>
+              <a
+                className="page-link text-secondary"
+                href="#"
+                onClick={nextPage}
+              >
                 Next
               </a>
             </li>

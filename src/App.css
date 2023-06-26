@@ -3,7 +3,7 @@
   background-color: rgb(218, 212, 212);
 }
 
-.dropdown_button {
+.dropdown_button, .location, .search {
   border-radius: 5px;
   background-color: white;
 }
@@ -66,8 +66,11 @@
 
 .start {
   color: gold;
-  font-size: 50px;
+  font-size: 20px;
+  background-color: white;
   margin-right: 20px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
 .detail_hotel {

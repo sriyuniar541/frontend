@@ -5,10 +5,10 @@ import "../App.css";
 
 export default function Dropdown_start({ starts, sertStarts }) {
   return (
-    <div>
+    <div className="text-secondary">
       <DropdownButton
         id="dropdown-item-button"
-        title={starts ? starts : "Bintang Hotel"}
+        title="Bintang Hotel"
         variant="white"
         className="dropdown_button mx-2"
       >
@@ -48,9 +48,9 @@ export default function Dropdown_start({ starts, sertStarts }) {
           as="button"
           className="start_filter"
           value={starts}
-          onClick={() => sertStarts("none")}
+          onClick={() => sertStarts("FiveStar")}
         >
-          Hotel Biasa
+          Bintang Lima
         </Dropdown.Item>
       </DropdownButton>
     </div>
