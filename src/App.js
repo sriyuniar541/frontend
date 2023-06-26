@@ -140,43 +140,37 @@ function App() {
                 <div className="d-flex bg-white rating_info">
                   <div className="rating col-lg-1 text-white">
                     {p.HotelInfo.TripAdvisorRating > 3.0 ? (
-                      <p className="bg-primary text-white">
+                      <p className="bg-primary text-white ps-2">
                         {p.HotelInfo.TripAdvisorRating}
                       </p>
                     ) : p.HotelInfo.TripAdvisorRating > 2.0 ? (
-                      <p className="bg-warning ">
+                      <p className="bg-warning text-white ps-2">
                         {p.HotelInfo.TripAdvisorRating}
                       </p>
                     ) : p.HotelInfo.TripAdvisorRating == "" ? (
-                      <p className="bg-danger">
+                      <p className="bg-danger text-white ps-2">
                         {p.HotelInfo.TripAdvisorRating}
                       </p>
                     ) : (
-                      <p className="bg-danger">0.0</p>
+                      <p className="bg-danger text-white ps-2">0.0</p>
                     )}
                   </div>
                   {p.HotelInfo.TripAdvisorRating > 3.0 ? (
                     <p className="pr-3 bg-white  text-primary bg-white px-3 border pt-1">
-                      {/* <b className="bg-white"> */}
                       Good
-                      {/* </b>{" "} */}
                     </p>
                   ) : p.HotelInfo.TripAdvisorRating > 2.0 ? (
                     <p className="text-warning bg-white px-3 border pt-1">
-                      {/* <b className="bg-white"> */}
                       Cukup
-                      {/* </b> */}
                     </p>
                   ) : (
                     <p className="text-danger bg-white px-3 border pt-1">
-                      {/* <b className=" p-2 mt-2 border"> */}
                       Kurang/Belum ada rating
-                      {/* </b> */}
                     </p>
                   )}
                 </div>
               </div>
-              <div className="bg-white col-lg-2 lg-border p-lg-2 p-3">
+              <div className="bg-white col-lg-2 p-lg-2 p-3">
                 <p className="price_title ">Holiday Best Deal</p>
                 <h5 className="price bg-white">
                   {p.MinHotelPrice._Currency}{" "}
@@ -205,7 +199,7 @@ function App() {
               </a>
             </li>
             <li className="page-item ">
-              <a className="page-link text-secondary" href="#">
+              <a className="page-link text-dark" href="#">
                 {currentPage}
               </a>
             </li>
