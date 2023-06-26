@@ -9,7 +9,7 @@ export default function Dropdown_start({ starts, sertStarts }) {
       <DropdownButton
         id="dropdown-item-button"
         title="Bintang Hotel"
-        variant="white"
+        variant="white text-secondary"
         className="dropdown_button mx-2"
       >
         <Dropdown.Item
@@ -22,7 +22,7 @@ export default function Dropdown_start({ starts, sertStarts }) {
         </Dropdown.Item>
         <Dropdown.Item
           as="button"
-          className="start_filter"
+          className="start_filter "
           value={starts}
           onClick={() => sertStarts("TwoStar")}
         >
