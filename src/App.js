@@ -99,7 +99,7 @@ function App() {
                   {/* bintang */}
                   <div className="start bg-white col-lg-3">
                     {p.HotelInfo.Rating === "FiveStar" ? (
-                      <div className="d-flex">
+                      <div className="d-flex bg-white">
                         <BsFillStarFill className="bg-white" />
                         <BsFillStarFill className="bg-white" />
                         <BsFillStarFill className="bg-white" />
