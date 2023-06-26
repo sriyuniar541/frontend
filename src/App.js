@@ -15,7 +15,7 @@ function App() {
 
   const [search, setSearch] = useState("");
   const [lokasi, setLokasi] = useState("");
-  const [starts, sertStarts] = useState("OneStart");
+  const [starts, sertStarts] = useState("FiveStar");
   const [price, setPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const recordPerPage = 2;
@@ -85,7 +85,7 @@ function App() {
           {record.map((p) => (
             <div
               key={p.ResultIndex}
-              className="cart_hotel bg-white d-lg-flex justify-content-between"
+              className="cart_hotel d-lg-flex justify-content-between"
             >
               <div className="image col-lg-4">
                 <img
@@ -93,11 +93,11 @@ function App() {
                   alt={p.HotelInfo.HotelName}
                 />
               </div>
-              <div className="detail_hotel col-6">
+              <div className="detail_hotel col-lg-5">
                 <h2 className="mt-2 bg-white"> {p.HotelInfo.HotelName}</h2>
-                <div className="d-lg-flex  col-12 bg-white">
+                <div className="d-lg-flex  col-11 bg-white">
                   {/* bintang */}
-                  <div className="start bg-white col-lg-2">
+                  <div className="start bg-white col-lg-3">
                     {p.HotelInfo.Rating === "FiveStar" ? (
                       <div className="d-flex">
                         <BsFillStarFill className="bg-white" />
@@ -130,7 +130,7 @@ function App() {
                       "none"
                     )}
                   </div>
-                  <p className="address bg-white">
+                  <p className="address bg-white col-lg-9">
                     <u className="bg-white">{p.HotelInfo.HotelAddress}</u>
                   </p>
                 </div>
@@ -173,8 +173,7 @@ function App() {
                   )}
                 </div>
               </div>
-
-              <div className="bg-white ">
+              <div className="bg-white col-lg-2 lg-border p-lg-2 p-3">
                 <p className="price_title ">Holiday Best Deal</p>
                 <h5 className="price bg-white">
                   {p.MinHotelPrice._Currency}{" "}
