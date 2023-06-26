@@ -62,7 +62,7 @@ function App() {
 
         {/* search */}
         <div className="d-flex bg-white my-2 search">
-          <FiSearch className="mt-2 ms-2 bg-white" />
+          <FiSearch className="mt-2 ms-2 bg-white text-secondary" />
           <input
             type="text"
             className="form-control border-white"
